@@ -1,0 +1,7 @@
+Flask==2.1.0
+google-cloud-bigquery
+numpy 
+scikit-learn
+gunicorn==20.1.0
+gcsfs==0.6.2
+pandas-gbq

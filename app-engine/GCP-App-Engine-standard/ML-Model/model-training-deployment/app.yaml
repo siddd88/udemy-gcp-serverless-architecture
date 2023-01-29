@@ -1,0 +1,4 @@
+runtime: python39
+service: classification-model-training
+manual_scaling:
+  instances: 1

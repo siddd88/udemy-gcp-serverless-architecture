@@ -1,0 +1,14 @@
+# Example - 1 : Manual Scaling using B Instance Types 
+instance_class: B2
+manual_scaling:
+  instances: 2
+
+# Example - 2 : Automatic Scaling using F Instance Types 
+instance_class: F4
+automatic_scaling:
+   min_num_instances: 1
+   max_num_instances: 5
+resources:
+  cpu: 1
+  memory_gb: 0.5
+  disk_size_gb: 10

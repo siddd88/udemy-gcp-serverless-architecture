@@ -1,0 +1,3 @@
+runtime: python39
+service: taxi-trips-chicago-test
+app_engine_apis: true

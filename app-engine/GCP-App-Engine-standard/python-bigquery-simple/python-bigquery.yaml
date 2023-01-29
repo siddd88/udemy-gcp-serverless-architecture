@@ -1,0 +1,5 @@
+runtime: python39
+service: flask-bigquery-simple-application
+instance_class: B2
+manual_scaling:
+  instances: 2

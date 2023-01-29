@@ -1,0 +1,17 @@
+runtime: python
+service: fraud-detection-model-training
+env: flex
+entrypoint: gunicorn -t 0 -b :$PORT main:app
+runtime_config:
+  python_version: 3.7
+instance_class: F2
+automatic_scaling:
+   min_num_instances: 1
+  #  max_num_instances: 
+
+# runtime: python39
+# service: fraud-detection-model-training
+# entrypoint: gunicorn -t 0 -b :$PORT main:app
+# instance_class: B8
+# manual_scaling:
+#   instances: 2

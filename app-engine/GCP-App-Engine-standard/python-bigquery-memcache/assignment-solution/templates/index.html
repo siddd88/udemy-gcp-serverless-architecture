@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+<head>
+<title>Bigquery Result</title>
+</head>
+<body>
+
+<h1>Bigquery Result</h1>
+<ul>
+{% for row in bq_result %}
+    <li>{{ row.timestamp.ctime() }}</li>
+    <li>{{ row.post_response }}</li>
+{% endfor %}
+</ul>
+</body>
+</html>

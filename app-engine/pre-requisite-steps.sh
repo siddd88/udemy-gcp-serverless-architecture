@@ -1,0 +1,1 @@
+export GOOGLE_APPLICATION_CREDENTIALS='/path to credentials file/filename.json'

@@ -1,0 +1,19 @@
+- data_validation:
+    call: http.get
+    args:
+        url: https://fraud-detection-input-validation-dot-gcp-serverless-project.uc.r.appspot.com
+    result: data_validataion_result
+- model_training:
+    call: http.post
+    args:
+        url: https://fraud-detection-model-training-dot-gcp-serverless-project.uc.r.appspot.com/
+        body:
+            is_output_valid: ${data_validataion_result.body.is_output_valid}
+            total_attrbutes: ${data_validataion_result.body.total_attrbutes}
+    result: model_training_result
+- return_result:
+    return: ${model_training_result}
+
+# gcloud workflows deploy fraud-detection-model-wf --source workflow.yaml
+
+# gcloud workflows run fraud-detection-model-wf
