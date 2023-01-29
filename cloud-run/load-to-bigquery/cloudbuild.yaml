@@ -1,0 +1,13 @@
+steps:
+# Build the container image
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/gcp-serverless-project-374110/py-bq-load', '.']
+# Push the container image to Container Registry
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/gcp-serverless-project-374110/py-bq-load']
+# Deploy container image to Cloud Run
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  entrypoint: gcloud
+  args: ['run', 'deploy', 'py-bq-load', '--image', 'gcr.io/gcp-serverless-project-374110/py-bq-load', '--region', 'us-central1','--allow-unauthenticated']
+images:
+- gcr.io/gcp-serverless-project-374110/py-bq-load
